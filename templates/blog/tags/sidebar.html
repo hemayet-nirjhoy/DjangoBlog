@@ -98,37 +98,18 @@
                 {% for tag,count,size in sidebar_tags %}
                     <a href="{{ tag.get_absolute_url }}"
                        class="tag-link-{{ tag.id }} tag-link-position-{{ tag.id }}"
-                       style="font-size: {{ size }}pt;" title="{{ count }}个话题"> {{ tag.name }}
+                       style="font-size: {{ size }}pt;" title="{{ count }}topics"> {{ tag.name }}
                     </a>
                 {% endfor %}
             </div>
         </aside>
     {% endif %}
-    <aside id="text-2" class="widget widget_text"><p class="widget-title">{% trans 'Welcome to star or fork the source code of this site' %}</p>
-        <div class="textwidget">
-
-            <p><a href="https://github.com/liangliangyy/DjangoBlog" rel="nofollow"><img
-                    src="https://resource.lylinux.net/img.shields.io/github/stars/liangliangyy/djangoblog.svg?style=social&amp;label=Star"
-                    alt="GitHub stars"></a> <a href="https://github.com/liangliangyy/DjangoBlog" rel="nofollow"><img
-                    src="https://resource.lylinux.net/img.shields.io/github/forks/liangliangyy/djangoblog.svg?style=social&amp;label=Fork"
-                    alt="GitHub forks"></a></p>
-        </div>
+    <aside id="text-2" class="widget widget_text"><p class="widget-title">
     </aside>
 
     <aside id="meta-3" class="widget widget_meta"><p class="widget-title">{% trans 'Function' %}</p>
         <ul>
-            <li><a href="/admin/" rel="nofollow">{% trans 'management site' %}</a></li>
-            {% if user.is_authenticated %}
-                <li><a href="{% url "account:logout" %}" rel="nofollow">{% trans 'logout' %}</a>
-                </li>
-
-            {% else %}
-                <li><a href="{% url "account:login" %}" rel="nofollow">{% trans 'login' %}</a></li>
-            {% endif %}
-            {% if user.is_superuser %}
-                <li><a href="{% url 'owntracks:show_dates' %}" target="_blank">{% trans 'Track record' %}</a></li>
-            {% endif %}
-            <li><a href="http://gitbook.lylinux.net" target="_blank" rel="nofollow">GitBook</a></li>
+            
         </ul>
     </aside>
 
