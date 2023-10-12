@@ -211,7 +211,7 @@ def load_pagination_info(page_obj, page_type, tag_name):
             previous_url = reverse(
                 'blog:index_page', kwargs={
                     'page': previous_number})
-    if page_type == '分类标签归档':
+    if page_type == 'Category tag archive':
         tag = get_object_or_404(Tag, name=tag_name)
         if page_obj.has_next():
             next_number = page_obj.next_page_number()
@@ -227,7 +227,8 @@ def load_pagination_info(page_obj, page_type, tag_name):
                 kwargs={
                     'page': previous_number,
                     'tag_name': tag.slug})
-    if page_type == '作者文章归档':
+            
+    if page_type == 'Author article archive':
         if page_obj.has_next():
             next_number = page_obj.next_page_number()
             next_url = reverse(
@@ -243,7 +244,7 @@ def load_pagination_info(page_obj, page_type, tag_name):
                     'page': previous_number,
                     'author_name': tag_name})
 
-    if page_type == '分类目录归档':
+    if page_type == 'Category Archives':
         category = get_object_or_404(Category, name=tag_name)
         if page_obj.has_next():
             next_number = page_obj.next_page_number()

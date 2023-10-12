@@ -323,30 +323,25 @@ class BlogSettings(models.Model):
     google_adsense_codes = models.TextField(
         _('adsense code'), max_length=2000, null=True, blank=True, default='')
     open_site_comment = models.BooleanField(_('open site comment'), default=True)
-    global_header = models.TextField("公共头部", null=True, blank=True, default='')
-    global_footer = models.TextField("公共尾部", null=True, blank=True, default='')
+    global_header = models.TextField( null=True, blank=True, default='')
+    global_footer = models.TextField( null=True, blank=True, default='')
     beian_code = models.CharField(
-        '备案号',
         max_length=2000,
         null=True,
         blank=True,
         default='')
     analytics_code = models.TextField(
-        "网站统计代码",
         max_length=1000,
         null=False,
         blank=False,
         default='')
-    show_gongan_code = models.BooleanField(
-        '是否显示公安备案号', default=False, null=False)
+    show_gongan_code = models.BooleanField(default=False, null=False)
     gongan_beiancode = models.TextField(
-        '公安备案号',
         max_length=2000,
         null=True,
         blank=True,
         default='')
-    comment_need_review = models.BooleanField(
-        '评论是否需要审核', default=False, null=False)
+    comment_need_review = models.BooleanField( default=False, null=False)
 
     class Meta:
         verbose_name = _('Website configuration')

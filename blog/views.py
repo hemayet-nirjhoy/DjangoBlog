@@ -23,13 +23,13 @@ logger = logging.getLogger(__name__)
 
 
 class ArticleListView(ListView):
-    # template_name属性用于指定使用哪个模板进行渲染
+    # The template_name attribute is used to specify which template to use for rendering
     template_name = 'blog/article_index.html'
 
-    # context_object_name属性用于给上下文变量取名（在模板中使用该名字）
+    # The context_object_name attribute is used to name the context variable (use this name in the template)
     context_object_name = 'article_list'
 
-    # 页面类型，分类目录或标签列表等
+    # Page type, category directory or tag list, etc.
     page_type = ''
     paginate_by = settings.PAGINATE_BY
     page_kwarg = 'page'
@@ -47,20 +47,20 @@ class ArticleListView(ListView):
 
     def get_queryset_cache_key(self):
         """
-        子类重写.获得queryset的缓存key
+        Subclass rewrite. Obtain the cache key of queryset
         """
         raise NotImplementedError()
 
     def get_queryset_data(self):
         """
-        子类重写.获取queryset的数据
+       Subclass rewriting. Get queryset data
         """
         raise NotImplementedError()
 
     def get_queryset_from_cache(self, cache_key):
         '''
-        缓存页面数据
-        :param cache_key: 缓存key
+        Caching page data
+        :param cache_key: Cache key
         :return:
         '''
         value = cache.get(cache_key)
@@ -75,7 +75,7 @@ class ArticleListView(ListView):
 
     def get_queryset(self):
         '''
-        重写默认，从缓存获取数据
+        Override the default and get data from cache
         :return:
         '''
         key = self.get_queryset_cache_key()
@@ -89,9 +89,9 @@ class ArticleListView(ListView):
 
 class IndexView(ArticleListView):
     '''
-    首页
+    front page
     '''
-    # 友情链接类型
+    # Friendly link type
     link_type = LinkShowType.I
 
     def get_queryset_data(self):
@@ -105,7 +105,7 @@ class IndexView(ArticleListView):
 
 class ArticleDetailView(DetailView):
     '''
-    文章详情页面
+    Article details page
     '''
     template_name = 'blog/article_detail.html'
     model = Article
@@ -159,9 +159,9 @@ class ArticleDetailView(DetailView):
 
 class CategoryDetailView(ArticleListView):
     '''
-    分类目录列表
+    Category directory list
     '''
-    page_type = "分类目录归档"
+    page_type = "Category Archives"
 
     def get_queryset_data(self):
         slug = self.kwargs['category_name']
@@ -198,9 +198,9 @@ class CategoryDetailView(ArticleListView):
 
 class AuthorDetailView(ArticleListView):
     '''
-    作者详情页
+    Author details page
     '''
-    page_type = '作者文章归档'
+    page_type = 'Author article archive'
 
     def get_queryset_cache_key(self):
         from uuslug import slugify
@@ -224,9 +224,9 @@ class AuthorDetailView(ArticleListView):
 
 class TagDetailView(ArticleListView):
     '''
-    标签列表页面
+    Tag list page
     '''
-    page_type = '分类标签归档'
+    page_type = "Category tag archive"
 
     def get_queryset_data(self):
         slug = self.kwargs['tag_name']
@@ -256,9 +256,9 @@ class TagDetailView(ArticleListView):
 
 class ArchivesView(ArticleListView):
     '''
-    文章归档页面
+    Article archive page
     '''
-    page_type = '文章归档'
+    page_type = 'Article archive'
     paginate_by = None
     page_kwarg = None
     template_name = 'blog/article_archives.html'
@@ -299,7 +299,8 @@ class EsSearchView(SearchView):
 @csrf_exempt
 def fileupload(request):
     """
-    该方法需自己写调用端来上传图片，该方法仅提供图床功能
+    This method requires you to write the caller yourself to upload images.
+    This method only provides the image bed function.
     :param request:
     :return:
     """

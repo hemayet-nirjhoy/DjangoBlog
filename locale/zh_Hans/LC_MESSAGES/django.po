@@ -539,7 +539,7 @@ msgstr "返回首页吧"
 #: .\templates\blog\article_archives.html:7
 #: .\templates\blog\article_archives.html:24
 msgid "article archive"
-msgstr "文章归档"
+msgstr "Article archive"
 
 #: .\templates\blog\article_archives.html:32
 msgid "year"
@@ -587,15 +587,15 @@ msgstr ""
 
 #: .\templates\blog\tags\article_meta_info.html:44
 msgid "on"
-msgstr "在"
+msgstr "exist"
 
 #: .\templates\blog\tags\article_meta_info.html:54
 msgid "edit"
-msgstr "编辑"
+msgstr "edit"
 
 #: .\templates\blog\tags\article_pagination.html:4
 msgid "article navigation"
-msgstr "文章导航"
+msgstr "Earlier articles"
 
 #: .\templates\blog\tags\article_pagination.html:9
 msgid "earlier articles"
@@ -603,65 +603,65 @@ msgstr "早期文章"
 
 #: .\templates\blog\tags\article_pagination.html:12
 msgid "newer articles"
-msgstr "较新文章"
+msgstr "Newer articles"
 
 #: .\templates\blog\tags\article_tag_list.html:5
 msgid "tags"
-msgstr "标签"
+msgstr "tags"
 
 #: .\templates\blog\tags\sidebar.html:7
 msgid "search"
-msgstr "搜索"
+msgstr "search"
 
 #: .\templates\blog\tags\sidebar.html:50
 msgid "recent comments"
-msgstr "近期评论"
+msgstr "recent comments"
 
 #: .\templates\blog\tags\sidebar.html:57
 msgid "published on"
-msgstr "发表于"
+msgstr "Published on"
 
 #: .\templates\blog\tags\sidebar.html:65
 msgid "recent articles"
-msgstr "近期文章"
+msgstr "recent articles"
 
 #: .\templates\blog\tags\sidebar.html:77
 msgid "bookmark"
-msgstr "书签"
+msgstr "bookmark"
 
 #: .\templates\blog\tags\sidebar.html:96
 msgid "Tag Cloud"
-msgstr "标签云"
+msgstr "Tag Cloud"
 
 #: .\templates\blog\tags\sidebar.html:107
 msgid "Welcome to star or fork the source code of this site"
-msgstr "欢迎您STAR或者FORK本站源代码"
+msgstr "Welcome to STAR or FORK the source code of this site"
 
 #: .\templates\blog\tags\sidebar.html:118
 msgid "Function"
-msgstr "功能"
+msgstr "Function"
 
 #: .\templates\blog\tags\sidebar.html:120
 msgid "management site"
-msgstr "管理站点"
+msgstr "Manage site"
 
 #: .\templates\blog\tags\sidebar.html:122
 msgid "logout"
-msgstr "登出"
+msgstr "Sign out"
 
 #: .\templates\blog\tags\sidebar.html:129
 msgid "Track record"
-msgstr "运动轨迹记录"
+msgstr "Motion track record"
 
 #: .\templates\blog\tags\sidebar.html:135
 msgid "Click me to return to the top"
-msgstr "点我返回顶部"
+msgstr "Click me to return to the top"
 
 #: .\templates\oauth\oauth_applications.html:5
 #| msgid "login"
 msgid "quick login"
-msgstr "快捷登录"
+msgstr "quick login"
 
 #: .\templates\share_layout\nav.html:26
 msgid "Article archive"
-msgstr "文章归档"
+msgstr "Article archive"

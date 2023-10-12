@@ -109,12 +109,12 @@ class ArticleTest(TestCase):
         self.check_pagination(p, '', '')
 
         p = Paginator(Article.objects.filter(tags=tag), settings.PAGINATE_BY)
-        self.check_pagination(p, '分类标签归档', tag.slug)
+        self.check_pagination(p, 'Category tag archive', tag.slug)
 
         p = Paginator(
             Article.objects.filter(
                 author__username='liangliangyy'), settings.PAGINATE_BY)
-        self.check_pagination(p, '作者文章归档', 'liangliangyy')
+        self.check_pagination(p, 'Author article archive', 'liangliangyy')
 
         p = Paginator(Article.objects.filter(category=category), settings.PAGINATE_BY)
         self.check_pagination(p, '分类目录归档', category.slug)
